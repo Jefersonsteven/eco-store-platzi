@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
+
+$primary-color: #FFEFE7;
+$secondary-color: #FFDAC6;
+$tertiary-color: #BABD8D;
+$prymary-text-color: #7C6A0A;
+$font-stack: 'IBM Plex Sans', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+
+nav {
+  background-color: $primary-color;
+  width: 100%;
+  height: 100px;
+}
+
+main {
+  background-color: $primary-color;
+}
+
+footer {
+  $background: #FA9500;
+  background-color: $background;
+  width: 100%;
+  height: 250px;
+}
