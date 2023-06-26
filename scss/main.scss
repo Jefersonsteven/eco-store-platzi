@@ -17,18 +17,119 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-stack;
   font-size: 1.6rem;
+  & img {
+    max-width: 316px;
+  }
 }
 
 nav {
   background-color: $primary-color;
   width: 100%;
-  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  color: $prymary-text-color;;
+  p {
+    font-size: 2rem;
+  }
+  .buttons-nav {
+    display: none;
+    button {
+      background-color: transparent;
+      border: none;
+      svg {
+        path {
+          stroke: $prymary-text-color;
+        }
+      }
+    }
+  }
+  .open-menu-button {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;  
+    @mixin bar {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background-color: $prymary-text-color;
+    }
+    div {
+      @include bar;
+    }
+    div::after {
+      content: '';
+      position: relative;
+      @include bar;
+      top: 8px;
+    }
+    div::before {
+      content: '';
+      position: relative;
+      @include bar;
+      top: -10px;
+    }
+  }
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   background-color: $primary-color;
+  padding: 0 25px;
+}
+
+article {
+  color: $prymary-text-color;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+  .impact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    h1 {
+      width: 100%;
+      font-size: 2.8rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    button {
+      width: 150px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      border-radius: 25px;
+      background-color: #FA9500;
+      border: none;
+      color: $primary-color;
+      font-weight: 800;
+    }
+  }
+  .image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    figure {
+      width: 100%;
+      img {
+        width: 100vw;
+        height: 362px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 footer {
@@ -36,4 +137,20 @@ footer {
   background-color: $background;
   width: 100%;
   height: 250px;
+}
+
+@media (width >= 700px) {
+
+  nav {
+    .buttons-nav {
+      display: flex;
+      button {
+        margin-left: 20px;
+      }
+    }
+    .open-menu-button {
+      display: none;
+    }
+  }
+
 }
